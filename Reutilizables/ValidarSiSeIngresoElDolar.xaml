@@ -1,0 +1,135 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="ValidarSiSeIngresoElDolar" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="595,1305" sap2010:WorkflowViewState.IdRef="ValidarSiSeIngresoElDolar_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:usa="clr-namespace:UiPathTeam.Subtitle.Activities;assembly=SubtitleActivity" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="28">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPathTeam.Subtitle.Activities</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="21">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>SubtitleActivity</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="ValidarSiSeIngresoElDolar" sap:VirtualizedContainerService.HintSize="554,1240" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="vcTipoCambio" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:ImageFound DisplayName="Imagen existente 'sap business'" Found="[vcTipoCambio]" sap:VirtualizedContainerService.HintSize="512,106" sap2010:WorkflowViewState.IdRef="ImageFound_1">
+      <ui:ImageFound.Image>
+        <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKYAAAAWCAYAAABKQucCAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANQSURBVGhD7ZXfShtBFMbPs4RdfYl2Q5LmEdqQmKX2vg0kpoHWq1KEECIhbEVEEItFKpZQEWupvtvX2c1md3Z3ziSmiW5hLn4we86cP9+ZY6T7+3sYDHmD/tzdwWDIG/T79hYGQ96gXzc3MBjyhllMQy6h6+trGAx5g35eXcFgyBs0mUxgMOQNurz8gTQfqwSiLBvbHi69N9igTWx72bj1sYvqo9fk0PSy5tl425ug6q7Sp0bq9UnebXmUixmTl4X4TxZznYjFqvo/DCofS57m9jDo+8UFeD7gBW3g9Vjle0zy0ofPE/UyHmOssmvJ09weBp2fn4OnhwrZcEecLTz3XNjhv3vbHcV3R7Hdp9Kb5RjBtVV2CSnWdt1kH4m8FfTSsQHqGr1KbKNKL7yb1eHfH7l2dDfWpdOcmherP8VcPYqZu5UoLzfz5NxSvXFvoOxlgfdaMfTt7Aw8XZSFmOaQs/ln0azdxL7vGzaFqKSv3A3jZF+3DCp3w3wqkrH7TX9B5LxSTyKX3RyGcTOGaIpBZu0yGh1+f+I7ig++y3gfxek0J3Mq9Qd5ZsgxAqWebN5ofore5s+Nmw/Ti19D+16rh76enoKngxJZ2Bpwtqx/p0QodcR50BAPUcJOFJf2icE0BpEvge+3GhhENqlOGDv76w0odbLxqdoRnZIUy+nQfWs0Z/pk9Eu2hfRo66dqcnOb01sA10toZ99rDax4MQfYshZYzPB70LAC8crH0i4ms3QzuDsJu98rp0P3rdE8p09+Mefo0dZP1fznxeR7Yd9rDdDJyQl42igKMfU+Z/PPBKven/r6dVhURDu6Ryi2w7iEL6Zft+L4iGSsf8f/dVPWVNJHXSxL5k67CLLq6PvnoB85p6xT952qn9GcvDdPfyafknRefW/83GZnZj5hvK4X9XutHjo+PgZPCw4VUNvjbNOz4xSmP/sCpyXd3auhENpJztNyovtEDlpRbgnpTqFWS/aRyCtwWtn4oLf4zrSvPdQKoa3gwCkkdcQ6dd86zak4Tn+auXqy9dW9Cdi5qeLimpEGVS+LvNeKoaOjIyzPOzwXYl99VvkMhuWhw8NDLM9bPBOL+fKTymcwLI9ZTEMuoYMvBzAY8gZ5ngeDIV94+AvJp+OtqMzB6QAAAABJRU5ErkJggg==" />
+      </ui:ImageFound.Image>
+      <ui:ImageFound.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1d953304-c724-4924-8197-ec20eb23008e" Selector="&lt;wnd app='sap business one.exe' cls='TMFrameClass omit:title='SAP Business One 9.3 - HBT_LOCALIZACION' /&gt;">
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </ui:ImageFound.Target>
+    </ui:ImageFound>
+    <If Condition="[vcTipoCambio=True]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="512,1002" sap2010:WorkflowViewState.IdRef="If_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="476,815" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:String" Name="ruta_excel" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <usa:DisplayPanelActivity ContinueOnError="{x:Null}" BackgroundColor="Black" BackgroundOpacity="0.8" DisplayName="Display Panel" DurationMS="3000" FontSize="38" sap:VirtualizedContainerService.HintSize="434,79" sap2010:WorkflowViewState.IdRef="DisplayPanelActivity_1" Message="Error: por favor configure el Tipo de cambio en SAP" TextColor="White" />
+          <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="434,542" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[ruta_excel]">
+            <ui:ExcelApplicationScope.Body>
+              <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="376,433" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:String" Name="CeldaA" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:ExcelWriteCell Cell="[&quot;A&quot;+X.ToString()]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_1" SheetName="PRUEBAS" Text="[RESUL_ERROR]" />
+                  <ui:ExcelWriteCell Cell="[&quot;B&quot;+X.ToString()]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_2" SheetName="PRUEBAS" Text="[EJECUTADO]" />
+                  <ui:ExcelWriteCell Cell="[&quot;C&quot;+X.ToString()]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_3" SheetName="PRUEBAS" Text="[&quot;ERROR --&gt; &quot;+&quot;Por favor ingrese el tipo de cambio en SAP&quot;]" />
+                </Sequence>
+              </ActivityAction>
+            </ui:ExcelApplicationScope.Body>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:ExcelApplicationScope>
+          <ui:Break DisplayName="Interrumpir" sap:VirtualizedContainerService.HintSize="434,22" sap2010:WorkflowViewState.IdRef="Break_1" />
+        </Sequence>
+      </If.Then>
+    </If>
+  </Sequence>
+</Activity>

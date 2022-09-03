@@ -1,0 +1,1 @@
+start "" /min "C:\Program Files\UiPath\Studio\UiRobot.exe" -f "Main.xaml"
