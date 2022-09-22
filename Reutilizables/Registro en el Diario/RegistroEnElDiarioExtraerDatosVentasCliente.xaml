@@ -1,0 +1,273 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="RegistroEnElDiarioExtraerDatosVentasCliente" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="vCodigoimpuesto3" Type="OutArgument(x:String)" />
+    <x:Property Name="vCodigoimpuesto4" Type="OutArgument(x:String)" />
+    <x:Property Name="vCodigoimpuesto5" Type="OutArgument(x:String)" />
+    <x:Property Name="vBaseImpuesto1" Type="OutArgument(x:String)" />
+    <x:Property Name="vBaseImpuesto2" Type="OutArgument(x:String)" />
+    <x:Property Name="vBaseImpuesto3" Type="OutArgument(x:String)" />
+    <x:Property Name="vBaseImpuesto4" Type="OutArgument(x:String)" />
+    <x:Property Name="vBaseImpuesto5" Type="OutArgument(x:String)" />
+    <x:Property Name="argument1" Type="InArgument(x:String)" />
+    <x:Property Name="argument2" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>593,1873</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>RegistroEnElDiarioExtraerDatosVentasCliente_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="26">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="18">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="RegistroEnElDiarioExtraerDatosVentasCliente" sap:VirtualizedContainerService.HintSize="418,1728" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="Extracion de datos " sap:VirtualizedContainerService.HintSize="376,1636" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="ui:GenericValue" Name="ClientRegistro" />
+        <Variable x:TypeArguments="x:String" Name="vCodigoimpuesto1" />
+        <Variable x:TypeArguments="x:String" Name="vCodigoimpuesto2" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Delay DisplayName="Retraso" Duration="00:00:02" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
+      <ui:GetVisibleText WordsInfo="{x:Null}" DisplayName="Obtener texto visible 'client Registro'" FormattedText="False" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetVisibleText_1">
+        <ui:GetVisibleText.Target>
+          <ui:Target Element="{x:Null}" Id="8ecec649-f3e4-4b53-a7a9-df6b729942a1" InformativeScreenshot="d6e94399a37971f3704ea62584d48ab6" Selector="&lt;wnd app='sap business one.exe' cls='TMFrameClass' omit:title='SAP Business One 9.3 - HBT_LOCALIZACION' /&gt;&lt;wnd aaname='Workspace' cls='TMMDIClientClass' idx='*'/&gt;&lt;wnd cls='TMMDIChildClass' title='Registro en el diario' /&gt;&lt;ctrl name='Registro en el diario' role='client' /&gt;">
+            <ui:Target.ClippingRegion>
+              <ui:Region Rectangle="816, 245, 160, 16" />
+            </ui:Target.ClippingRegion>
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:GetVisibleText.Target>
+        <ui:GetVisibleText.Text>
+          <OutArgument x:TypeArguments="x:String">[vCodigoimpuesto1]</OutArgument>
+        </ui:GetVisibleText.Text>
+      </ui:GetVisibleText>
+      <ui:GetVisibleText WordsInfo="{x:Null}" DisplayName="Obtener texto visible 'client Registro'" FormattedText="False" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetVisibleText_2">
+        <ui:GetVisibleText.Target>
+          <ui:Target Element="{x:Null}" Id="8ecec649-f3e4-4b53-a7a9-df6b729942a1" InformativeScreenshot="3663ffad3021e04bfd0ba1bc15d07e96" Selector="&lt;wnd app='sap business one.exe' cls='TMFrameClass' omit:title='SAP Business One 9.3 - HBT_LOCALIZACION' /&gt;&lt;wnd aaname='Workspace' cls='TMMDIClientClass' idx='*'/&gt;&lt;wnd cls='TMMDIChildClass' title='Registro en el diario' /&gt;&lt;ctrl name='Registro en el diario' role='client' /&gt;">
+            <ui:Target.ClippingRegion>
+              <ui:Region Rectangle="817, 259, 160, 19" />
+            </ui:Target.ClippingRegion>
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:GetVisibleText.Target>
+        <ui:GetVisibleText.Text>
+          <OutArgument x:TypeArguments="x:String">[vCodigoimpuesto2]</OutArgument>
+        </ui:GetVisibleText.Text>
+      </ui:GetVisibleText>
+      <ui:GetVisibleText WordsInfo="{x:Null}" DisplayName="Obtener texto visible 'client Registro'" FormattedText="False" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetVisibleText_3">
+        <ui:GetVisibleText.Target>
+          <ui:Target Element="{x:Null}" Id="8ecec649-f3e4-4b53-a7a9-df6b729942a1" InformativeScreenshot="7f3f1f9c116a6bef849f1854ab9cbea7" Selector="&lt;wnd app='sap business one.exe' cls='TMFrameClass' omit:title='SAP Business One 9.3 - HBT_LOCALIZACION' /&gt;&lt;wnd aaname='Workspace' cls='TMMDIClientClass' idx='*'/&gt;&lt;wnd cls='TMMDIChildClass' title='Registro en el diario' /&gt;&lt;ctrl name='Registro en el diario' role='client' /&gt;">
+            <ui:Target.ClippingRegion>
+              <ui:Region Rectangle="817, 275, 156, 19" />
+            </ui:Target.ClippingRegion>
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:GetVisibleText.Target>
+        <ui:GetVisibleText.Text>
+          <OutArgument x:TypeArguments="x:String">[vCodigoimpuesto3]</OutArgument>
+        </ui:GetVisibleText.Text>
+      </ui:GetVisibleText>
+      <ui:GetVisibleText WordsInfo="{x:Null}" DisplayName="Obtener texto visible 'client Registro'" FormattedText="False" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetVisibleText_4">
+        <ui:GetVisibleText.Target>
+          <ui:Target Element="{x:Null}" Id="8ecec649-f3e4-4b53-a7a9-df6b729942a1" InformativeScreenshot="8fcd2a166c1524cb7f9cc3a54233ab55" Selector="&lt;wnd app='sap business one.exe' cls='TMFrameClass' omit:title='SAP Business One 9.3 - HBT_LOCALIZACION' /&gt;&lt;wnd aaname='Workspace' cls='TMMDIClientClass' idx='*'/&gt;&lt;wnd cls='TMMDIChildClass' title='Registro en el diario' /&gt;&lt;ctrl name='Registro en el diario' role='client' /&gt;">
+            <ui:Target.ClippingRegion>
+              <ui:Region Rectangle="815, 291, 162, 20" />
+            </ui:Target.ClippingRegion>
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:GetVisibleText.Target>
+        <ui:GetVisibleText.Text>
+          <OutArgument x:TypeArguments="x:String">[vCodigoimpuesto4]</OutArgument>
+        </ui:GetVisibleText.Text>
+      </ui:GetVisibleText>
+      <ui:GetVisibleText WordsInfo="{x:Null}" DisplayName="Obtener texto visible 'client Registro'" FormattedText="False" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetVisibleText_5">
+        <ui:GetVisibleText.Target>
+          <ui:Target Element="{x:Null}" Id="8ecec649-f3e4-4b53-a7a9-df6b729942a1" InformativeScreenshot="62497e48452a5f8da061cea635258237" Selector="&lt;wnd app='sap business one.exe' cls='TMFrameClass' omit:title='SAP Business One 9.3 - HBT_LOCALIZACION' /&gt;&lt;wnd aaname='Workspace' cls='TMMDIClientClass' idx='*'/&gt;&lt;wnd cls='TMMDIChildClass' title='Registro en el diario' /&gt;&lt;ctrl name='Registro en el diario' role='client' /&gt;">
+            <ui:Target.ClippingRegion>
+              <ui:Region Rectangle="814, 354, 162, 21" />
+            </ui:Target.ClippingRegion>
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:GetVisibleText.Target>
+        <ui:GetVisibleText.Text>
+          <OutArgument x:TypeArguments="x:String">[vCodigoimpuesto5]</OutArgument>
+        </ui:GetVisibleText.Text>
+      </ui:GetVisibleText>
+      <ui:GetVisibleText WordsInfo="{x:Null}" DisplayName="Obtener texto visible 'client Registro'" FormattedText="False" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetVisibleText_6">
+        <ui:GetVisibleText.Target>
+          <ui:Target Element="{x:Null}" Id="8ecec649-f3e4-4b53-a7a9-df6b729942a1" InformativeScreenshot="0edfa23f83a9b5442036653a35234002" Selector="&lt;wnd app='sap business one.exe' cls='TMFrameClass' omit:title='SAP Business One 9.3 - HBT_LOCALIZACION' /&gt;&lt;wnd aaname='Workspace' cls='TMMDIClientClass' idx='*'/&gt;&lt;wnd cls='TMMDIChildClass' title='Registro en el diario' /&gt;&lt;ctrl name='Registro en el diario' role='client' /&gt;">
+            <ui:Target.ClippingRegion>
+              <ui:Region Rectangle="975, 244, 100, 19" />
+            </ui:Target.ClippingRegion>
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:GetVisibleText.Target>
+        <ui:GetVisibleText.Text>
+          <OutArgument x:TypeArguments="x:String">[vBaseImpuesto1]</OutArgument>
+        </ui:GetVisibleText.Text>
+      </ui:GetVisibleText>
+      <ui:GetVisibleText WordsInfo="{x:Null}" DisplayName="Obtener texto visible 'client Registro'" FormattedText="False" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetVisibleText_7">
+        <ui:GetVisibleText.Target>
+          <ui:Target Element="{x:Null}" Id="8ecec649-f3e4-4b53-a7a9-df6b729942a1" InformativeScreenshot="fe0df12789f92326b0382d2ad67fd249" Selector="&lt;wnd app='sap business one.exe' cls='TMFrameClass' omit:title='SAP Business One 9.3 - HBT_LOCALIZACION' /&gt;&lt;wnd aaname='Workspace' cls='TMMDIClientClass' idx='*'/&gt;&lt;wnd cls='TMMDIChildClass' title='Registro en el diario' /&gt;&lt;ctrl name='Registro en el diario' role='client' /&gt;">
+            <ui:Target.ClippingRegion>
+              <ui:Region Rectangle="973, 258, 104, 20" />
+            </ui:Target.ClippingRegion>
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:GetVisibleText.Target>
+        <ui:GetVisibleText.Text>
+          <OutArgument x:TypeArguments="x:String">[vBaseImpuesto2]</OutArgument>
+        </ui:GetVisibleText.Text>
+      </ui:GetVisibleText>
+      <ui:GetVisibleText WordsInfo="{x:Null}" DisplayName="Obtener texto visible 'client Registro'" FormattedText="False" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetVisibleText_8">
+        <ui:GetVisibleText.Target>
+          <ui:Target Element="{x:Null}" Id="8ecec649-f3e4-4b53-a7a9-df6b729942a1" InformativeScreenshot="c4df3127107ceb45f7dca003499afcc1" Selector="&lt;wnd app='sap business one.exe' cls='TMFrameClass' omit:title='SAP Business One 9.3 - HBT_LOCALIZACION' /&gt;&lt;wnd aaname='Workspace' cls='TMMDIClientClass' idx='*'/&gt;&lt;wnd cls='TMMDIChildClass' title='Registro en el diario' /&gt;&lt;ctrl name='Registro en el diario' role='client' /&gt;">
+            <ui:Target.ClippingRegion>
+              <ui:Region Rectangle="972, 273, 102, 23" />
+            </ui:Target.ClippingRegion>
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:GetVisibleText.Target>
+        <ui:GetVisibleText.Text>
+          <OutArgument x:TypeArguments="x:String">[vBaseImpuesto3]</OutArgument>
+        </ui:GetVisibleText.Text>
+      </ui:GetVisibleText>
+      <ui:GetVisibleText WordsInfo="{x:Null}" DisplayName="Obtener texto visible 'client Registro'" FormattedText="False" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetVisibleText_9">
+        <ui:GetVisibleText.Target>
+          <ui:Target Element="{x:Null}" Id="8ecec649-f3e4-4b53-a7a9-df6b729942a1" InformativeScreenshot="2b848a255f5e0896c5dda5bc3fc11a53" Selector="&lt;wnd app='sap business one.exe' cls='TMFrameClass' omit:title='SAP Business One 9.3 - HBT_LOCALIZACION' /&gt;&lt;wnd aaname='Workspace' cls='TMMDIClientClass' idx='*'/&gt;&lt;wnd cls='TMMDIChildClass' title='Registro en el diario' /&gt;&lt;ctrl name='Registro en el diario' role='client' /&gt;">
+            <ui:Target.ClippingRegion>
+              <ui:Region Rectangle="974, 290, 103, 21" />
+            </ui:Target.ClippingRegion>
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:GetVisibleText.Target>
+        <ui:GetVisibleText.Text>
+          <OutArgument x:TypeArguments="x:String">[vBaseImpuesto4]</OutArgument>
+        </ui:GetVisibleText.Text>
+      </ui:GetVisibleText>
+      <ui:GetVisibleText WordsInfo="{x:Null}" DisplayName="Obtener texto visible 'client Registro'" FormattedText="False" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetVisibleText_10">
+        <ui:GetVisibleText.Target>
+          <ui:Target Element="{x:Null}" Id="8ecec649-f3e4-4b53-a7a9-df6b729942a1" InformativeScreenshot="27443a54fa079aef9734fd7d2515befc" Selector="&lt;wnd app='sap business one.exe' cls='TMFrameClass' omit:title='SAP Business One 9.3 - HBT_LOCALIZACION' /&gt;&lt;wnd aaname='Workspace' cls='TMMDIClientClass' idx='*'/&gt;&lt;wnd cls='TMMDIChildClass' title='Registro en el diario' /&gt;&lt;ctrl name='Registro en el diario' role='client' /&gt;">
+            <ui:Target.ClippingRegion>
+              <ui:Region Rectangle="975, 354, 102, 19" />
+            </ui:Target.ClippingRegion>
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:GetVisibleText.Target>
+        <ui:GetVisibleText.Text>
+          <OutArgument x:TypeArguments="x:String">[vBaseImpuesto5]</OutArgument>
+        </ui:GetVisibleText.Text>
+      </ui:GetVisibleText>
+      <Delay DisplayName="Retraso" Duration="00:00:03" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_2" />
+    </Sequence>
+  </Sequence>
+</Activity>

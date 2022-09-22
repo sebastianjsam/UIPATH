@@ -1,0 +1,342 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="ObtencionValorInformeFinalDesdeAbajoHaciaArriba" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="vValorinformeInventario" Type="OutArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>558,2923</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ObtencionValorInformeFinalDesdeAbajoHaciaArriba_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="46">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="ObtencionValorInformeFinalCostoDesdeAbajo" sap:VirtualizedContainerService.HintSize="568,2858" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:GetVisibleText WordsInfo="{x:Null}" DisplayName="Get Visible Text 'client Informe'" FormattedText="False" sap:VirtualizedContainerService.HintSize="526,106" sap2010:WorkflowViewState.IdRef="GetVisibleText_9">
+      <ui:GetVisibleText.Target>
+        <ui:Target Element="{x:Null}" Id="607236bc-2ab4-4083-ae44-0160d65fff1f" InformativeScreenshot="b21e183d775976e5fc3e616d1e4a5a2e" Selector="&lt;wnd app='sap business one.exe' cls='TMFrameClass' title='HBT_LOCALIZACION - SAP Business One 10.0' /&gt;&lt;wnd aaname='Workspace' cls='TMMDIClientClass' idx='*' /&gt;&lt;wnd cls='TMMDIChildClass' title='Informe de auditoría de stocks' /&gt;&lt;ctrl name='Informe de auditoría de stocks' role='client' /&gt;">
+          <ui:Target.ClippingRegion>
+            <ui:Region Rectangle="341, 207, 59, 18" />
+          </ui:Target.ClippingRegion>
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </ui:GetVisibleText.Target>
+      <ui:GetVisibleText.Text>
+        <OutArgument x:TypeArguments="x:String">[vValorinformeInventario]</OutArgument>
+      </ui:GetVisibleText.Text>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:GetVisibleText>
+    <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="526,2383" sap2010:WorkflowViewState.IdRef="Sequence_5">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If Condition="[vValorinformeInventario=&quot;&quot;]" sap:VirtualizedContainerService.HintSize="484,293" sap2010:WorkflowViewState.IdRef="If_9">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <If.Then>
+          <ui:GetVisibleText WordsInfo="{x:Null}" DisplayName="Get Visible Text 'client Informe'" FormattedText="False" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetVisibleText_10">
+            <ui:GetVisibleText.Target>
+              <ui:Target Element="{x:Null}" Id="607236bc-2ab4-4083-ae44-0160d65fff1f" InformativeScreenshot="57857e75b5038002f63af5b26d989cfe" Selector="&lt;wnd app='sap business one.exe' cls='TMFrameClass' title='HBT_LOCALIZACION - SAP Business One 10.0' /&gt;&lt;wnd aaname='Workspace' cls='TMMDIClientClass' idx='*' /&gt;&lt;wnd cls='TMMDIChildClass' title='Informe de auditoría de stocks' /&gt;&lt;ctrl name='Informe de auditoría de stocks' role='client' /&gt;">
+                <ui:Target.ClippingRegion>
+                  <ui:Region Rectangle="337, 191, 64, 21" />
+                </ui:Target.ClippingRegion>
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+                <ui:Target.WaitForReady>
+                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                </ui:Target.WaitForReady>
+              </ui:Target>
+            </ui:GetVisibleText.Target>
+            <ui:GetVisibleText.Text>
+              <OutArgument x:TypeArguments="x:String">[vValorinformeInventario]</OutArgument>
+            </ui:GetVisibleText.Text>
+          </ui:GetVisibleText>
+        </If.Then>
+      </If>
+      <If Condition="[vValorinformeInventario=&quot;&quot;]" sap:VirtualizedContainerService.HintSize="484,293" sap2010:WorkflowViewState.IdRef="If_10">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <If.Then>
+          <ui:GetVisibleText WordsInfo="{x:Null}" DisplayName="Get Visible Text 'client Informe'" FormattedText="False" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetVisibleText_11">
+            <ui:GetVisibleText.Target>
+              <ui:Target Element="{x:Null}" Id="607236bc-2ab4-4083-ae44-0160d65fff1f" InformativeScreenshot="5aff0f0aed7f30526db943473bd1b30e" Selector="&lt;wnd app='sap business one.exe' cls='TMFrameClass' title='HBT_LOCALIZACION - SAP Business One 10.0' /&gt;&lt;wnd aaname='Workspace' cls='TMMDIClientClass' idx='*' /&gt;&lt;wnd cls='TMMDIChildClass' title='Informe de auditoría de stocks' /&gt;&lt;ctrl name='Informe de auditoría de stocks' role='client' /&gt;">
+                <ui:Target.ClippingRegion>
+                  <ui:Region Rectangle="338, 176, 63, 19" />
+                </ui:Target.ClippingRegion>
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+                <ui:Target.WaitForReady>
+                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                </ui:Target.WaitForReady>
+              </ui:Target>
+            </ui:GetVisibleText.Target>
+            <ui:GetVisibleText.Text>
+              <OutArgument x:TypeArguments="x:String">[vValorinformeInventario]</OutArgument>
+            </ui:GetVisibleText.Text>
+          </ui:GetVisibleText>
+        </If.Then>
+      </If>
+      <If Condition="[vValorinformeInventario=&quot;&quot;]" sap:VirtualizedContainerService.HintSize="484,293" sap2010:WorkflowViewState.IdRef="If_11">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <If.Then>
+          <ui:GetVisibleText WordsInfo="{x:Null}" DisplayName="Get Visible Text 'client Informe'" FormattedText="False" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetVisibleText_12">
+            <ui:GetVisibleText.Target>
+              <ui:Target Element="{x:Null}" Id="607236bc-2ab4-4083-ae44-0160d65fff1f" InformativeScreenshot="36de2d7b54afb6024666431f4fcbc8ca" Selector="&lt;wnd app='sap business one.exe' cls='TMFrameClass' title='HBT_LOCALIZACION - SAP Business One 10.0' /&gt;&lt;wnd aaname='Workspace' cls='TMMDIClientClass' idx='*' /&gt;&lt;wnd cls='TMMDIChildClass' title='Informe de auditoría de stocks' /&gt;&lt;ctrl name='Informe de auditoría de stocks' role='client' /&gt;">
+                <ui:Target.ClippingRegion>
+                  <ui:Region Rectangle="341, 160, 60, 21" />
+                </ui:Target.ClippingRegion>
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+                <ui:Target.WaitForReady>
+                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                </ui:Target.WaitForReady>
+              </ui:Target>
+            </ui:GetVisibleText.Target>
+            <ui:GetVisibleText.Text>
+              <OutArgument x:TypeArguments="x:String">[vValorinformeInventario]</OutArgument>
+            </ui:GetVisibleText.Text>
+          </ui:GetVisibleText>
+        </If.Then>
+      </If>
+      <If Condition="[vValorinformeInventario=&quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="484,293" sap2010:WorkflowViewState.IdRef="If_12">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <If.Then>
+          <ui:GetVisibleText WordsInfo="{x:Null}" DisplayName="Get Visible Text 'client Informe'" FormattedText="False" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetVisibleText_13">
+            <ui:GetVisibleText.Target>
+              <ui:Target Element="{x:Null}" Id="607236bc-2ab4-4083-ae44-0160d65fff1f" InformativeScreenshot="505dab812bbc5fefc8bd1bdede0da73d" Selector="&lt;wnd app='sap business one.exe' cls='TMFrameClass' title='HBT_LOCALIZACION - SAP Business One 10.0' /&gt;&lt;wnd aaname='Workspace' cls='TMMDIClientClass' idx='*' /&gt;&lt;wnd cls='TMMDIChildClass' title='Informe de auditoría de stocks' /&gt;&lt;ctrl name='Informe de auditoría de stocks' role='client' /&gt;">
+                <ui:Target.ClippingRegion>
+                  <ui:Region Rectangle="339, 142, 61, 20" />
+                </ui:Target.ClippingRegion>
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+                <ui:Target.WaitForReady>
+                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                </ui:Target.WaitForReady>
+              </ui:Target>
+            </ui:GetVisibleText.Target>
+            <ui:GetVisibleText.Text>
+              <OutArgument x:TypeArguments="x:String">[vValorinformeInventario]</OutArgument>
+            </ui:GetVisibleText.Text>
+          </ui:GetVisibleText>
+        </If.Then>
+      </If>
+      <If Condition="[vValorinformeInventario=&quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="484,293" sap2010:WorkflowViewState.IdRef="If_13">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <If.Then>
+          <ui:GetVisibleText WordsInfo="{x:Null}" DisplayName="Get Visible Text 'client Informe'" FormattedText="False" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetVisibleText_14">
+            <ui:GetVisibleText.Target>
+              <ui:Target Element="{x:Null}" Id="607236bc-2ab4-4083-ae44-0160d65fff1f" InformativeScreenshot="a73ad4e5e710ae04ae16d802cf0602af" Selector="&lt;wnd app='sap business one.exe' cls='TMFrameClass' title='HBT_LOCALIZACION - SAP Business One 10.0' /&gt;&lt;wnd aaname='Workspace' cls='TMMDIClientClass' idx='*' /&gt;&lt;wnd cls='TMMDIChildClass' title='Informe de auditoría de stocks' /&gt;&lt;ctrl name='Informe de auditoría de stocks' role='client' /&gt;">
+                <ui:Target.ClippingRegion>
+                  <ui:Region Rectangle="339, 128, 60, 17" />
+                </ui:Target.ClippingRegion>
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+                <ui:Target.WaitForReady>
+                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                </ui:Target.WaitForReady>
+              </ui:Target>
+            </ui:GetVisibleText.Target>
+            <ui:GetVisibleText.Text>
+              <OutArgument x:TypeArguments="x:String">[vValorinformeInventario]</OutArgument>
+            </ui:GetVisibleText.Text>
+          </ui:GetVisibleText>
+        </If.Then>
+      </If>
+      <If Condition="[vValorinformeInventario=&quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="484,293" sap2010:WorkflowViewState.IdRef="If_14">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <If.Then>
+          <ui:GetVisibleText WordsInfo="{x:Null}" DisplayName="Get Visible Text 'client Informe'" FormattedText="False" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetVisibleText_15">
+            <ui:GetVisibleText.Target>
+              <ui:Target Element="{x:Null}" Id="607236bc-2ab4-4083-ae44-0160d65fff1f" InformativeScreenshot="173baa27186167187bff80b5be91259d" Selector="&lt;wnd app='sap business one.exe' cls='TMFrameClass' title='HBT_LOCALIZACION - SAP Business One 10.0' /&gt;&lt;wnd aaname='Workspace' cls='TMMDIClientClass' idx='*' /&gt;&lt;wnd cls='TMMDIChildClass' title='Informe de auditoría de stocks' /&gt;&lt;ctrl name='Informe de auditoría de stocks' role='client' /&gt;">
+                <ui:Target.ClippingRegion>
+                  <ui:Region Rectangle="341, 113, 57, 17" />
+                </ui:Target.ClippingRegion>
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+                <ui:Target.WaitForReady>
+                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                </ui:Target.WaitForReady>
+              </ui:Target>
+            </ui:GetVisibleText.Target>
+            <ui:GetVisibleText.Text>
+              <OutArgument x:TypeArguments="x:String">[vValorinformeInventario]</OutArgument>
+            </ui:GetVisibleText.Text>
+          </ui:GetVisibleText>
+        </If.Then>
+      </If>
+      <If Condition="[vValorinformeInventario=&quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="484,293" sap2010:WorkflowViewState.IdRef="If_15">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <If.Then>
+          <ui:GetVisibleText WordsInfo="{x:Null}" DisplayName="Get Visible Text 'client Informe'" FormattedText="False" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetVisibleText_16">
+            <ui:GetVisibleText.Target>
+              <ui:Target Element="{x:Null}" Id="607236bc-2ab4-4083-ae44-0160d65fff1f" InformativeScreenshot="12b99dd5e9a72e25ed74b2337718c3d9" Selector="&lt;wnd app='sap business one.exe' cls='TMFrameClass' title='HBT_LOCALIZACION - SAP Business One 10.0' /&gt;&lt;wnd aaname='Workspace' cls='TMMDIClientClass' idx='*' /&gt;&lt;wnd cls='TMMDIChildClass' title='Informe de auditoría de stocks' /&gt;&lt;ctrl name='Informe de auditoría de stocks' role='client' /&gt;">
+                <ui:Target.ClippingRegion>
+                  <ui:Region Rectangle="337, 96, 62, 17" />
+                </ui:Target.ClippingRegion>
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+                <ui:Target.WaitForReady>
+                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                </ui:Target.WaitForReady>
+              </ui:Target>
+            </ui:GetVisibleText.Target>
+            <ui:GetVisibleText.Text>
+              <OutArgument x:TypeArguments="x:String">[vValorinformeInventario]</OutArgument>
+            </ui:GetVisibleText.Text>
+          </ui:GetVisibleText>
+        </If.Then>
+      </If>
+    </Sequence>
+    <If Condition="[vValorinformeInventario=&quot;&quot;]" DisplayName="Lanzar excepción" sap:VirtualizedContainerService.HintSize="526,51" sap2010:WorkflowViewState.IdRef="If_16">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <Throw DisplayName="Lanzar excepción" Exception="[new Exception(&quot; No ha sido posible obtener el valor de la transaccion o es nulo&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_2" />
+      </If.Then>
+    </If>
+    <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Clic 'push button  Close'" sap:VirtualizedContainerService.HintSize="526,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+      <ui:Click.CursorPosition>
+        <ui:CursorPosition Position="Center">
+          <ui:CursorPosition.OffsetX>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:CursorPosition.OffsetX>
+          <ui:CursorPosition.OffsetY>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:CursorPosition.OffsetY>
+        </ui:CursorPosition>
+      </ui:Click.CursorPosition>
+      <ui:Click.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="42fe29bf-e430-430b-846b-84aa028d8eb8" InformativeScreenshot="a531e42abce8c200a5ea71e53401c205" Selector="&lt;wnd app='sap business one.exe' cls='TMFrameClass' title='HBT_LOCALIZACION - SAP Business One 10.0' /&gt;&lt;wnd aaname='Workspace' cls='TMMDIClientClass' idx='*' /&gt;&lt;wnd cls='TMMDIChildClass' title='Informe de auditoría de stocks' /&gt;&lt;ctrl name='Close' role='push button' /&gt;">
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </ui:Click.Target>
+    </ui:Click>
+  </Sequence>
+</Activity>

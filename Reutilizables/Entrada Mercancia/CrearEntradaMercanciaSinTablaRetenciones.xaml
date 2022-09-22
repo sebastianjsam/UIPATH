@@ -1,0 +1,357 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="CrearFacturaProveedorSinTablaRetenciones" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:obac="clr-namespace:Org.BouncyCastle.Asn1.Cms;assembly=BouncyCastle.Crypto" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="mensajeErrorSAP" Type="InArgument(x:String)" />
+    <x:Property Name="Tmmbclass" Type="InArgument(ui:GenericValue)" />
+    <x:Property Name="ColorRojo" Type="InArgument(x:Boolean)" />
+    <x:Property Name="ExistDialogCreacionFacturaProveedor" Type="InArgument(x:Boolean)" />
+    <x:Property Name="DocumentoNoPuedeModificarCreacion" Type="InArgument(x:Boolean)" />
+  </x:Members>
+  <this:CrearFacturaProveedorSinTablaRetenciones.mensajeErrorSAP>
+    <InArgument x:TypeArguments="x:String" />
+  </this:CrearFacturaProveedorSinTablaRetenciones.mensajeErrorSAP>
+  <this:CrearFacturaProveedorSinTablaRetenciones.Tmmbclass>
+    <InArgument x:TypeArguments="ui:GenericValue" />
+  </this:CrearFacturaProveedorSinTablaRetenciones.Tmmbclass>
+  <this:CrearFacturaProveedorSinTablaRetenciones.ColorRojo>
+    <InArgument x:TypeArguments="x:Boolean" />
+  </this:CrearFacturaProveedorSinTablaRetenciones.ColorRojo>
+  <this:CrearFacturaProveedorSinTablaRetenciones.ExistDialogCreacionFacturaProveedor>
+    <InArgument x:TypeArguments="x:Boolean" />
+  </this:CrearFacturaProveedorSinTablaRetenciones.ExistDialogCreacionFacturaProveedor>
+  <this:CrearFacturaProveedorSinTablaRetenciones.DocumentoNoPuedeModificarCreacion>
+    <InArgument x:TypeArguments="x:Boolean" />
+  </this:CrearFacturaProveedorSinTablaRetenciones.DocumentoNoPuedeModificarCreacion>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>600,3275</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>CrearFacturaProveedorSinTablaRetenciones_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="30">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>Org.BouncyCastle.Asn1.Cms</x:String>
+      <x:String>Org.BouncyCastle.Asn1</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="21">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>BouncyCastle.Crypto</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="CrearEntradaMercanciaSinTablaRetenciones" sap:VirtualizedContainerService.HintSize="610,3210" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="Básico" sap:VirtualizedContainerService.HintSize="568,3118" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="obac:Time" Name="vDaley" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ExpandirVentanaGeneralFormularios workflow" sap:VirtualizedContainerService.HintSize="526,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Reutilizables\Comunes\ExpandirVentanaGeneralFormularios.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <scg:Dictionary x:TypeArguments="x:String, Argument" />
+        </ui:InvokeWorkflowFile.Arguments>
+      </ui:InvokeWorkflowFile>
+      <Delay DisplayName="Retraso" Duration="00:00:07" sap:VirtualizedContainerService.HintSize="526,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
+      <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_DOUBLE" DisplayName="ClickScroll 'TMMDIChildClass'" sap:VirtualizedContainerService.HintSize="526,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+        <ui:Click.CursorPosition>
+          <ui:CursorPosition OffsetX="1351" OffsetY="547" Position="TopLeft" />
+        </ui:Click.CursorPosition>
+        <ui:Click.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0a98e91e-ec68-4709-a051-d15e4e52999a" InformativeScreenshot="a954460d4fde206a27de9955c89d7974" Selector="&lt;wnd app='sap business one.exe' cls='TMFrameClass' title='HBT_LOCALIZACION - SAP Business One 10.0' /&gt;&lt;wnd aaname='Workspace' cls='TMMDIClientClass' idx='*' /&gt;&lt;wnd cls='TMMDIChildClass' title='Entrada de mercancías' /&gt;">
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:Click.Target>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:Click>
+      <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Clic 'TMMDIChildClass'" sap:VirtualizedContainerService.HintSize="526,106" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+        <ui:Click.CursorPosition>
+          <ui:CursorPosition OffsetX="1350" OffsetY="569" Position="TopLeft" />
+        </ui:Click.CursorPosition>
+        <ui:Click.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="962164a0-bdf9-483f-a5b3-94a72321143c" InformativeScreenshot="a954460d4fde206a27de9955c89d7974" Selector="&lt;wnd app='sap business one.exe' cls='TMFrameClass' title='HBT_LOCALIZACION - SAP Business One 10.0' /&gt;&lt;wnd aaname='Workspace' cls='TMMDIClientClass' idx='*' /&gt;&lt;wnd cls='TMMDIChildClass' title='Entrada de mercancías' /&gt;">
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:Click.Target>
+      </ui:Click>
+      <Delay DisplayName="Retraso" Duration="00:00:04" sap:VirtualizedContainerService.HintSize="526,22" sap2010:WorkflowViewState.IdRef="Delay_2" />
+      <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_DOUBLE" DisplayName="Click 'client Factura'" sap:VirtualizedContainerService.HintSize="526,106" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+        <ui:Click.CursorPosition>
+          <ui:CursorPosition OffsetX="44" OffsetY="556" Position="TopLeft" />
+        </ui:Click.CursorPosition>
+        <ui:Click.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2f10e3ef-6c2a-4d95-88d2-3bc400025bf9" InformativeScreenshot="b3534db9f3afcf92f955e647f9fb0ab1" Selector="&lt;wnd app='sap business one.exe' cls='TMFrameClass' title='HBT_LOCALIZACION - SAP Business One 10.0' /&gt;&lt;wnd aaname='Workspace' cls='TMMDIClientClass' idx='*' /&gt;&lt;wnd cls='TMMDIChildClass' title='Entrada de mercancías' /&gt;&lt;ctrl name='Entrada de mercancías' role='client' /&gt;">
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:Click.Target>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:Click>
+      <Delay Duration="00:00:08" sap:VirtualizedContainerService.HintSize="526,22" sap2010:WorkflowViewState.IdRef="Delay_3" />
+      <Sequence DisplayName="Crear documento no se puede modificar" sap:VirtualizedContainerService.HintSize="526,623" sap2010:WorkflowViewState.IdRef="Sequence_14">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:ImageFound DisplayName="Imagen existente 'sap business'" Found="[DocumentoNoPuedeModificarCreacion]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="ImageFound_5">
+          <ui:ImageFound.Image>
+            <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="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" />
+          </ui:ImageFound.Image>
+          <ui:ImageFound.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="10472517-4f17-4ec1-b248-e8239fe1d953" Selector="&lt;wnd app='sap business one.exe' cls='TMFrameClass' title='HBT_LOCALIZACION - SAP Business One 10.0' /&gt;" TimeoutMS="1000">
+              <ui:Target.WaitForReady>
+                <InArgument x:TypeArguments="ui:WaitForReady" />
+              </ui:Target.WaitForReady>
+            </ui:Target>
+          </ui:ImageFound.Target>
+        </ui:ImageFound>
+        <If Condition="[DocumentoNoPuedeModificarCreacion=true]" DisplayName="Si existe cuadro de dialogo" sap:VirtualizedContainerService.HintSize="484,385" sap2010:WorkflowViewState.IdRef="If_4">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <If.Then>
+            <Sequence sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_12">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'client Factura'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_7" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                <ui:Click.CursorPosition>
+                  <ui:CursorPosition OffsetX="35" OffsetY="90" Position="TopLeft" />
+                </ui:Click.CursorPosition>
+                <ui:Click.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d3af6e12-40bd-4cc0-819d-b12c3897730d" InformativeScreenshot="b524697dc47c0b81a4e97e3fefb07a7c" Selector="&lt;wnd app='sap business one.exe' cls='TMFrameClass' title='HBT_LOCALIZACION - SAP Business One 10.0' /&gt;&lt;wnd aaname='Workspace' cls='TMMDIClientClass' /&gt;&lt;wnd cls='TMMDIChildClass' title='Factura de proveedores' /&gt;&lt;ctrl name='Factura de proveedores' role='client' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:Click.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:Click>
+            </Sequence>
+          </If.Then>
+          <If.Else>
+            <Sequence sap2010:WorkflowViewState.IdRef="Sequence_13">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Sequence>
+          </If.Else>
+        </If>
+      </Sequence>
+      <Delay DisplayName="Retraso" Duration="00:00:01" sap:VirtualizedContainerService.HintSize="526,22" sap2010:WorkflowViewState.IdRef="Delay_4" />
+      <ui:ImageFound DisplayName="Imagen existente 'sap business'" Found="[ExistDialogCreacionFacturaProveedor]" sap:VirtualizedContainerService.HintSize="526,106" sap2010:WorkflowViewState.IdRef="ImageFound_7">
+        <ui:ImageFound.Image>
+          <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="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" />
+        </ui:ImageFound.Image>
+        <ui:ImageFound.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d34092f7-f70d-4485-9a3c-c611406e74b0" Selector="&lt;wnd app='sap business one.exe' cls='TMFrameClass' title='HBT_LOCALIZACION - SAP Business One 10.0' /&gt;" TimeoutMS="1000">
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:ImageFound.Target>
+      </ui:ImageFound>
+      <If Condition="[ExistDialogCreacionFacturaProveedor=true]" DisplayName="Si existe cuadro de dialogo" sap:VirtualizedContainerService.HintSize="526,385" sap2010:WorkflowViewState.IdRef="If_3">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <If.Then>
+          <Sequence sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_10">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="1" DisplayName="Click 'client Factura'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition OffsetX="39" OffsetY="91" Position="TopLeft" />
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="80e7a1dd-5d80-4b01-b198-4657f5f7573e" InformativeScreenshot="53c28b11dbb0a29583d36bfad3eddeb7" Selector="&lt;wnd app='sap business one.exe' cls='TMFrameClass' title='HBT_LOCALIZACION - SAP Business One 10.0' /&gt;&lt;wnd aaname='Workspace' cls='TMMDIClientClass' idx='*' /&gt;&lt;wnd cls='TMMDIChildClass' title='Entrada de mercancías' /&gt;&lt;ctrl name='Entrada de mercancías' role='client' /&gt;" TimeoutMS="1">
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:Click.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:Click>
+          </Sequence>
+        </If.Then>
+        <If.Else>
+          <Sequence sap2010:WorkflowViewState.IdRef="Sequence_11">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Sequence>
+        </If.Else>
+      </If>
+      <Delay DisplayName="Retraso" Duration="00:00:02" sap:VirtualizedContainerService.HintSize="526,22" sap2010:WorkflowViewState.IdRef="Delay_6" />
+      <ui:GetVisibleText WordsInfo="{x:Null}" DisplayName="Obtener texto visible 'TMMBClass'" FormattedText="False" sap:VirtualizedContainerService.HintSize="526,106" sap2010:WorkflowViewState.IdRef="GetVisibleText_1">
+        <ui:GetVisibleText.Target>
+          <ui:Target Element="{x:Null}" Id="b7ed96eb-ad4f-4ead-a510-6d0d91f75d12" InformativeScreenshot="38910df1e606d1aa51ea870961ddafe8" Selector="&lt;wnd app='sap business one.exe' cls='TMFrameClass' title='HBT_LOCALIZACION - SAP Business One 10.0' /&gt;&lt;wnd cls='TMMBClass' /&gt;" TimeoutMS="1">
+            <ui:Target.ClippingRegion>
+              <ui:Region Rectangle="11, 23, 534, 13" />
+            </ui:Target.ClippingRegion>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:GetVisibleText.Target>
+        <ui:GetVisibleText.Text>
+          <OutArgument x:TypeArguments="ui:GenericValue">[Tmmbclass]</OutArgument>
+        </ui:GetVisibleText.Text>
+      </ui:GetVisibleText>
+      <ui:LogMessage DisplayName="Registrar mensaje" sap:VirtualizedContainerService.HintSize="526,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Error" Message="[Tmmbclass.ToString()]" />
+      <ui:ImageFound DisplayName="Imagen existente 'explorer.exe'" Found="[ColorRojo]" sap:VirtualizedContainerService.HintSize="526,106" sap2010:WorkflowViewState.IdRef="ImageFound_4">
+        <ui:ImageFound.Image>
+          <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEsSURBVDhPvVI9S8NQAEx/QelfqYNzJxen9g+4W2i3LFLcCq5mqYgfSyHSqUHBQQudHSqKUJqABCkNQqhiITbq+e4JLp6bOBwc98V7vOdcOQ7+Ev84WCggbjbxPBjgLU0tyKnRkx0DPWgKiefhI88l6P02Kgfjeh3viwV2KhV41arlBDk1cmZUVw4+XlzaKybjMTZLJfiNhgU5NXrMqK4cfAkjLKdT5EmC03YbG0YjyKnRY0Z15eDTzS2yMEQWRQhare9B8mwyQWZOOR9d/+gRcvDupGdf9L7bhVssou+6FuTU6DGjunJwuLWNeRDguFxGr1b7Oq0BOTV6zKiuHDxfWcVw7wjL2QyvcYzU9y3IqdFjRnXlIP9Yf20dZ7sdjDr7eDg4tCCnRk//QwefDk8h6F8OT5AAAAAASUVORK5CYII=" />
+        </ui:ImageFound.Image>
+        <ui:ImageFound.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="83359e47-4f9a-4a15-b92f-b507877f3a86" Selector="&lt;wnd app='sap business one.exe' cls='TMFrameClass' title='HBT_LOCALIZACION - SAP Business One 10.0' /&gt;" TimeoutMS="1">
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:ImageFound.Target>
+      </ui:ImageFound>
+      <If Condition="[Tmmbclass.ToString()&lt;&gt;&quot;&quot; And ColorRojo=true]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="526,301" sap2010:WorkflowViewState.IdRef="If_1">
+        <If.Then>
+          <Sequence sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Throw DisplayName="Lanzar excepción" Exception="[new Exception(Tmmbclass.ToString())]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+          </Sequence>
+        </If.Then>
+        <If.Else>
+          <Sequence sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Sequence>
+        </If.Else>
+      </If>
+      <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="526,22" sap2010:WorkflowViewState.IdRef="Delay_5" />
+      <Sequence DisplayName="Boton atras" sap:VirtualizedContainerService.HintSize="526,66" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke BtnAtrasIndividual workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Reutilizables\Comunes\BtnAtrasIndividual.xaml">
+          <ui:InvokeWorkflowFile.Arguments>
+            <scg:Dictionary x:TypeArguments="x:String, Argument" />
+          </ui:InvokeWorkflowFile.Arguments>
+        </ui:InvokeWorkflowFile>
+      </Sequence>
+    </Sequence>
+  </Sequence>
+</Activity>
